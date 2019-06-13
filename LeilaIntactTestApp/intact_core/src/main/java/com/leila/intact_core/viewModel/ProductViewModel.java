@@ -5,6 +5,7 @@ package com.leila.intact_core.viewModel;
  * faraghi.l@gmail.com
  */
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.leila.intact_core.model.model.ProductEntity;
@@ -25,7 +26,7 @@ public class ProductViewModel extends ViewModel {
      * Load data from asset file
      *
      */
-    public ProductEntity getProductEntities(){
+    public LiveData<ProductEntity> getProductEntities(){
         return productRepository.fetchDataFromFile();
     }
 }

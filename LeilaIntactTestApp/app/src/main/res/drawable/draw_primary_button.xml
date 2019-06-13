@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_selected="true" android:drawable="@color/grey_dark">
+        <shape>
+        <corners android:radius="@dimen/medium_padding" />
+        </shape>
+    </item>
+    <item android:state_selected="false" android:drawable="@color/colorAccent">
+        <shape>
+        <corners android:radius="@dimen/medium_padding" />
+        </shape>
+    </item>
+</selector>

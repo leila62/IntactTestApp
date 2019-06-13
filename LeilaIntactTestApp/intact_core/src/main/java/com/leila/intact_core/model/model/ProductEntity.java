@@ -55,32 +55,32 @@ public class ProductEntity {
         }
 
         public class Size {
-            private String h;
-            private String w;
-            private String d;
+            private String H;
+            private String W;
+            private String D;
 
             public String getH() {
-                return h;
+                return H;
             }
 
             public void setH(String h) {
-                this.h = h;
+                H = h;
             }
 
             public String getW() {
-                return w;
+                return W;
             }
 
             public void setW(String w) {
-                this.w = w;
+                W = w;
             }
 
             public String getD() {
-                return d;
+                return D;
             }
 
             public void setD(String d) {
-                this.d = d;
+                D = d;
             }
         }
 
@@ -163,5 +163,6 @@ public class ProductEntity {
         public void setQuantity(int quantity) {
             this.quantity = quantity;
         }
+
     }
 }

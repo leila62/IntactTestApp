@@ -11,5 +11,5 @@ import com.leila.intact_core.model.model.ProductEntity;
 public interface NavigationListener {
 
     void onNavigateToDetailFragment(ProductEntity.Product product);
-    void onNavigateToListFragment(ProductEntity.Product product);
+    void onNavigateToListFragment();
 }

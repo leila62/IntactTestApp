@@ -7,6 +7,9 @@ package com.leila.intact_core.model.repository;
 
 import android.content.Context;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+
 import com.google.gson.Gson;
 import com.leila.intact_core.model.model.ProductEntity;
 
@@ -27,8 +30,10 @@ public class ProductRepository {
      * @return
      */
 
-    public ProductEntity fetchDataFromFile() {
+    public LiveData<ProductEntity> fetchDataFromFile() {
         ProductEntity productEntity;
+        LiveData<ProductEntity> productObservable;
+
         String json = null;
         try {
             InputStream inputStream = context.getAssets().open(ProductFileName);
@@ -44,7 +49,9 @@ public class ProductRepository {
         /**
          * Parsing json by Gson library because it's faster and less code and less exception handling
          * */
+        productObservable = new MutableLiveData<>();
         productEntity = new Gson().fromJson(json, ProductEntity.class);
-        return productEntity;
+        ((MutableLiveData<ProductEntity>) productObservable).setValue(productEntity);
+        return productObservable;
     }
 }
